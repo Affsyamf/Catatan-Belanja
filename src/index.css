@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Comfortaa:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Comfortaa', sans-serif;
+  color: #283618;
+  background-color: #fefae0;
+}
+
+.app {
+  width: 90%;
+  max-width: 700px;
+  height: 100vh;
+  margin: auto;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+
+h1 {
+  font-family: 'Borel';
+  text-align: center;
+  background-color: #283618;
+  color: white;
+  font-size: 3rem;
+  padding: 1.5rem 0;
+}
+
+.add-form {
+  background-color: #dda15e;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; 
+}
+
+.add-form h3 {
+  font-size: 1rem;
+}
+
+button,
+select,
+input {
+  background-color: #fefae0;
+  font-family: inherit;
+  border: none;
+  border-radius: 3rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+button {
+  background-color: #283618;
+  color: #fefae0;
+  font-weight: bold;
+}
+
+/* === BAGIAN LIST === */
+.list {
+  background-image: url(/img/paper-bg.jpg);
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  background-position: center top;
+
+  padding: 1.6rem ;
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+}
+
+.list ul {
+  list-style: none;
+  width: 90%;
+  
+  /* Kunci Penataan Vertikal dan Horizontal */
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Jarak antar item */
+  align-items: center; /* Menengahkan semua <li> */
+}
+
+.list li {
+  font-size: 1.8rem;
+  font-weight: bold;
+  
+  /* Kunci untuk mengelompokkan item */
+  display: flex;
+  align-items: center;
+  gap: 1.2rem; /* Jarak antara [grup teks] dan [tombol X] */
+  line-height: 1.1;
+}
+
+/* GRUP CHECKBOX + TEKS */
+.list li > div {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.list input[type='checkbox'] {
+  height: 1.2rem;
+  width: 1.2rem;
+  accent-color: #283618;
+}
+
+.list li button {
+  background-color: transparent;
+  color: red;
+  font-size: 1.2rem;
+  padding: 0;
+  width: auto;
+  height: auto;
+  font-weight: bold;
+}
+
+/* === BAGIAN BAWAH === */
+.actions, .stats {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.actions { background-color: #606c38; }
+.actions button, .actions select {
+  padding: 0.7rem 1.2rem;
+  font-size: 0.9rem;
+  margin: 0 0.5rem;
+}
+
+.stats {
+  background-color: #bc6c25;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
