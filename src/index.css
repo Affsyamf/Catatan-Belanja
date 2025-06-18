@@ -7,7 +7,7 @@
 }
 
 body {
-  font-size: 16px;
+  font-size: 1rem;
   font-family: 'Comfortaa', sans-serif;
   color: #283618;
   background-color: #fefae0;
@@ -15,131 +15,194 @@ body {
 
 .app {
   width: 90%;
-  max-width: 700px;
+  max-width: 900px;
   height: 100vh;
   margin: auto;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
-  border-left: 1px solid #e0e0e0;
-  border-right: 1px solid #e0e0e0;
 }
 
+/* HEADER */
 h1 {
-  font-family: 'Borel';
+  font-family: 'Borel', cursive;
   text-align: center;
   background-color: #283618;
   color: white;
-  font-size: 3rem;
-  padding: 1.5rem 0;
+  font-size: 4rem;
+  padding: 2rem 0;
 }
 
+/* FORM */
 .add-form {
   background-color: #dda15e;
-  padding: 1rem 0;
+  padding: 2rem 1rem;
   display: flex;
-  flex-direction: row; 
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem; 
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
 }
 
 .add-form h3 {
-  font-size: 1rem;
+  font-size: 2rem;
+  color: #283618;
 }
 
-button,
-select,
-input {
+.add-form select,
+.add-form input,
+.add-form button {
   background-color: #fefae0;
   font-family: inherit;
   border: none;
-  border-radius: 3rem;
-  padding: 0.7rem 1.2rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-  vertical-align: middle;
+  border-radius: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  margin: 0.3rem;
 }
 
-button {
+.add-form button {
   background-color: #283618;
-  color: #fefae0;
+  color: white;
   font-weight: bold;
+  cursor: pointer;
 }
 
-/* === BAGIAN LIST === */
+/* GROCERY LIST */
 .list {
-  background-image: url(/img/paper-bg.jpg);
+  background-image: url('../public/img/paper-bg.jpg');
   background-repeat: repeat-y;
-  background-size: 100% auto;
-  background-position: center top;
-
-  padding: 1.6rem ;
-  overflow-y: scroll;
+  background-size: 100%;
+  padding: 2rem 0;
+  overflow-y: auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .list ul {
   list-style: none;
-  width: 90%;
-  
-  /* Kunci Penataan Vertikal dan Horizontal */
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem; /* Jarak antar item */
-  align-items: center; /* Menengahkan semua <li> */
+  align-items: center;
+  width: 100%;
 }
 
-.list li {
-  font-size: 1.8rem;
-  font-weight: bold;
-  
-  /* Kunci untuk mengelompokkan item */
+.list-item {
+  background-color: #606c38;
+  color: white;
+  padding: 1rem 2rem;
+  margin: 0.5rem 0;
+  border-radius: 1rem;
+  font-size: 1.6rem;
   display: flex;
   align-items: center;
-  gap: 1.2rem; /* Jarak antara [grup teks] dan [tombol X] */
-  line-height: 1.1;
+  gap: 1rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* GRUP CHECKBOX + TEKS */
-.list li > div {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
+.list-item input[type='checkbox'] {
+  width: 1.5rem;
+  height: 1.5rem;
+  accent-color: #bc6c25;
 }
 
-.list input[type='checkbox'] {
-  height: 1.2rem;
-  width: 1.2rem;
-  accent-color: #283618;
-}
-
-.list li button {
-  background-color: transparent;
-  color: red;
+.delete-btn {
+  background-color: #bc6c25;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
   font-size: 1.2rem;
-  padding: 0;
-  width: auto;
-  height: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: red;
+}
+
+/* ACTIONS BOTTOM */
+.actions {
+  display: none;
+}
+
+.actions-bottom {
+  background-color: #283618;
+  padding: 1.2rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.actions-bottom select,
+.actions-bottom button {
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  border-radius: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.actions-bottom select {
+  background-color: white;
+  color: #283618;
+}
+
+.actions-bottom button {
+  background-color: white;
+  color: #283618;
   font-weight: bold;
 }
 
-/* === BAGIAN BAWAH === */
-.actions, .stats {
-  padding: 1rem 0;
-  text-align: center;
-}
-
-.actions { background-color: #606c38; }
-.actions button, .actions select {
-  padding: 0.7rem 1.2rem;
-  font-size: 0.9rem;
-  margin: 0 0.5rem;
-}
-
+/* FOOTER */
 .stats {
   background-color: #bc6c25;
   color: white;
-  font-size: 1rem;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.2rem;
   font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .list li {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  .add-form h3 {
+    font-size: 1.5rem;
+  }
+
+  .list li {
+    font-size: 1.2rem;
+  }
 }
